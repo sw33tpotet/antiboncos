@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="oceanBg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stopColor="#082f49"/>
+      <stop offset="100%" stopColor="#020617"/>
+    </radialGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#22d3ee"/>
+      <stop offset="100%" stopColor="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="100" fill="url(#oceanBg)" stroke="#0ea5e9" stroke-width="8"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#1e293b" stroke-width="4" stroke-dasharray="8 8"/>
+  <polygon points="256,90 268,130 244,130" fill="#38bdf8"/>
+  <polygon points="256,422 268,382 244,382" fill="#64748b"/>
+  <polygon points="90,256 130,244 130,268" fill="#64748b"/>
+  <polygon points="422,256 382,244 382,268" fill="#64748b"/>
+  <path d="M 120 280 C 180 230, 220 330, 280 270 C 340 210, 380 300, 410 260" fill="none" stroke="url(#waveGrad)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M 100 330 C 170 280, 210 380, 280 320 C 340 260, 370 340, 420 300" fill="none" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 230 190 Q 280 160 330 180 Q 360 195 380 185 Q 360 215 320 220 Q 270 225 240 210 Z" fill="#38bdf8"/>
+  <polygon points="230,190 200,165 210,200" fill="#0284c7"/>
+  <polygon points="230,210 200,230 215,200" fill="#0284c7"/>
+</svg>

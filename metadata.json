@@ -1,0 +1,6 @@
+{
+  "name": "Batam OceanCast - Prediksi Ikan, Arus, Angin & Pasang Surut",
+  "description": "Platform oseanografi dan prediksi lubuk ikan, arus laut, arah angin, serta kurva pasang surut presisi untuk perairan Batam dan Kepulauan Riau.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
