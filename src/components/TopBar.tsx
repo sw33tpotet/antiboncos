@@ -39,28 +39,28 @@ export const TopBar: React.FC<TopBarProps> = ({ activeTab, onTabChange, onJumpTo
             Pasang Surut
           </button>
           <button
+            onClick={() => onTabChange('petua-bulan')}
+            className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'petua-bulan' ? 'text-cyan-400 font-semibold' : ''}`}
+          >
+            Kalender Petua
+          </button>
+          <button
             onClick={() => onTabChange('sst')}
             className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'sst' ? 'text-cyan-400 font-semibold' : ''}`}
           >
             Satelit SST
           </button>
           <button
-            onClick={() => onTabChange('prediksi-ikan')}
-            className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'prediksi-ikan' ? 'text-cyan-400 font-semibold' : ''}`}
+            onClick={() => onTabChange('rig-simulator')}
+            className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'rig-simulator' ? 'text-cyan-400 font-semibold' : ''}`}
           >
-            Prediksi Ikan
+            Rangkaian Pancing
           </button>
           <button
-            onClick={() => onTabChange('trip-planner')}
-            className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'trip-planner' ? 'text-cyan-400 font-semibold' : ''}`}
+            onClick={() => onTabChange('safety')}
+            className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'safety' ? 'text-cyan-400 font-semibold' : ''}`}
           >
-            Trip Planner
-          </button>
-          <button
-            onClick={() => onTabChange('mingguan')}
-            className={`transition-colors hover:text-white whitespace-nowrap ${activeTab === 'mingguan' ? 'text-cyan-400 font-semibold' : ''}`}
-          >
-            Outlook 7 Hari
+            Keselamatan Laut
           </button>
         </nav>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertTriangle, CheckCircle, Navigation, ShieldAlert, Waves, Wind } from 'lucide-react';
+import { AlertTriangle, CheckCircle, Navigation, Radio, ShieldAlert, Waves, Wind } from 'lucide-react';
 import { TidePoint, WeatherCondition } from '../types/marine';
 import boatFishingImg from '../assets/images/barelang_marine_fishing_1791032089453.jpg';
 
@@ -144,6 +144,19 @@ export const SafetyBarometer: React.FC<SafetyBarometerProps> = ({ currentPoint, 
               <div className="text-slate-400 text-[10px]">SUHU AIR LAUT</div>
               <div className="text-white font-bold text-sm mt-0.5">{weather.waterTempCelsius}°C</div>
               <div className="text-cyan-400 text-[10px]">Optimal</div>
+            </div>
+          </div>
+
+          {/* Emergency SAR Hotline Bar */}
+          <div className="p-3 rounded-xl bg-rose-950/20 border border-rose-900/40 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-rose-400 font-bold">
+              <Radio className="h-4 w-4 flex-shrink-0" />
+              <span>SIAGA DARURAT SAR KEPRI:</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-300">
+              <div>VHF: <span className="text-white font-bold">Ch 16 (156.8 MHz)</span></div>
+              <div>Basarnas: <span className="text-cyan-300 font-bold">115 / (0778) 463399</span></div>
+              <div>Ditpolairud: <span className="text-amber-300 font-bold">(0778) 321855</span></div>
             </div>
           </div>
         </div>

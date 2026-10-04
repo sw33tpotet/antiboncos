@@ -4,8 +4,7 @@
  */
 
 import React, { useMemo, useState } from 'react';
-import { BatamMarineDirectory } from './components/BatamMarineDirectory';
-import { FishingTripPlanner } from './components/FishingTripPlanner';
+import { BatamRigSimulator } from './components/BatamRigSimulator';
 import { FishPredictionPanel } from './components/FishPredictionPanel';
 import { InteractiveMarineMap } from './components/InteractiveMarineMap';
 import { MarineHero } from './components/MarineHero';
@@ -14,6 +13,7 @@ import { OfflineIndicator } from './components/OfflineIndicator';
 import { SafetyBarometer } from './components/SafetyBarometer';
 import { SatelliteSSTChlorophyll } from './components/SatelliteSSTChlorophyll';
 import { SinkerCalculator } from './components/SinkerCalculator';
+import { TidalWisdomCalendar } from './components/TidalWisdomCalendar';
 import { TideCurrentTimeline } from './components/TideCurrentTimeline';
 import { TopBar } from './components/TopBar';
 import { WeeklyForecastCalendar } from './components/WeeklyForecastCalendar';
@@ -53,20 +53,23 @@ export default function App() {
     } else if (tab === 'pasang-surut') {
       const el = document.getElementById('timeline-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (tab === 'petua-bulan') {
+      const el = document.getElementById('petua-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (tab === 'sst') {
       const el = document.getElementById('sst-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (tab === 'rig-simulator') {
+      const el = document.getElementById('rig-section');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (tab === 'safety') {
+      const el = document.getElementById('safety-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (tab === 'prediksi-ikan') {
       const el = document.getElementById('ikan-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (tab === 'trip-planner') {
-      const el = document.getElementById('planner-section');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (tab === 'mingguan') {
-      const el = document.getElementById('mingguan-section');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (tab === 'direktori') {
-      const el = document.getElementById('direktori-section');
+    } else if (tab === 'sinker') {
+      const el = document.getElementById('sinker-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
@@ -130,12 +133,17 @@ export default function App() {
           />
         </div>
 
-        {/* Section 3: Satellite SST & Chlorophyll-a Thermal Front Map */}
+        {/* Section 3: Kalender Pasang Kancing / Air Mati vs Air Hidup (Kearifan Lokal Melayu Batam) */}
+        <div id="petua-section">
+          <TidalWisdomCalendar />
+        </div>
+
+        {/* Section 4: Satellite SST & Chlorophyll-a Thermal Front Map */}
         <div id="sst-section">
           <SatelliteSSTChlorophyll />
         </div>
 
-        {/* Section 4: Fish Feeding Prediction & Species Catalog */}
+        {/* Section 5: Fish Feeding Prediction & Species Catalog */}
         <div id="ikan-section">
           <FishPredictionPanel
             currentPoint={currentPoint}
@@ -145,26 +153,15 @@ export default function App() {
           />
         </div>
 
-        {/* Section 5: Smart Trip Planner */}
-        <div id="planner-section">
-          <FishingTripPlanner
-            hourlyData={forecast.hourly}
-            selectedDate={selectedDate}
-          />
+        {/* Section 6: Simulator Rangkaian Pancing Laut & Panduan Simpul (Batam Rig Guide) */}
+        <div id="rig-section">
+          <BatamRigSimulator />
         </div>
 
-        {/* Section 6: Sinker & Hydrodynamic Rig Calculator */}
+        {/* Section 7: Sinker & Hydrodynamic Rig Calculator */}
         <div id="sinker-section">
           <SinkerCalculator
             currentPoint={currentPoint}
-          />
-        </div>
-
-        {/* Section 7: Weekly 7-Day Outlook */}
-        <div id="mingguan-section">
-          <WeeklyForecastCalendar
-            selectedDate={selectedDate}
-            onSelectDate={setSelectedDate}
           />
         </div>
 
@@ -176,9 +173,12 @@ export default function App() {
           />
         </div>
 
-        {/* Section 9: Batam Marine Directory (Piers, Live Bait, Emergency SAR) */}
-        <div id="direktori-section">
-          <BatamMarineDirectory />
+        {/* Section 9: Weekly 7-Day Outlook */}
+        <div id="mingguan-section">
+          <WeeklyForecastCalendar
+            selectedDate={selectedDate}
+            onSelectDate={setSelectedDate}
+          />
         </div>
 
         {/* Section 10: Methodology & Local Wisdom Explainer */}
@@ -191,11 +191,11 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-semibold text-slate-300">Batam OceanCast PWA</span>
             <span aria-hidden="true">·</span>
-            <span>Platform Oseanografi & Prediksi Nelayan Kepulauan Riau</span>
+            <span>Platform Oseanografi, Rigging & Navigasi Bahari Kepulauan Riau</span>
           </div>
 
           <div className="flex items-center gap-4 text-slate-400">
-            <span>Model Harmonik Pasang Surut Batam</span>
+            <span>Petua Melayu & Model Harmonik Pasang Surut Batam</span>
             <span aria-hidden="true">·</span>
             <span>Mode PWA Offline Aktif</span>
           </div>
